@@ -1,17 +1,13 @@
 <script setup>
 import { ref } from "vue";
 
-// const titleClass = ref("title");
-const titleId = ref("title");
+const count = ref(0);
+function increment() {
+  count.value++;
+}
 </script>
 
 <template>
-  <h1 :id="titleId">Make me red</h1>
-  <!-- add dynamic class binding here -->
+  <!-- make this button work -->
+  <button @click="increment">Count is: {{ count }}</button>
 </template>
-
-<style>
-#title {
-  color: red;
-}
-</style>
