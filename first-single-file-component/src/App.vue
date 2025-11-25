@@ -1,7 +1,11 @@
 <script setup>
-import ChildComp from './ChildComp.vue'
+import { ref } from 'vue'
+import ChildComp from './ChildComp-emit.vue'
+
+const childMsg = ref('No child msg yet')
 </script>
 
 <template>
-  <ChildComp />
+  <ChildComp @response="(msg) => childMsg = msg"/>
+  <p>{{ childMsg }}</p>
 </template>
